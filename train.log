@@ -1,0 +1,58 @@
+nohup: 忽略输入
+Epoch 1/100:   0%|          | 0/928 [00:00<?, ?it/s]Epoch 1/100:   0%|          | 0/928 [00:00<?, ?it/s]Epoch 1/100:   0%|          | 0/928 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/homec/xiaolei/anaconda3/envs/pytorchEnv/lib/python3.8/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/homec/xiaolei/anaconda3/envs/pytorchEnv/lib/python3.8/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/homec/xiaolei/anaconda3/envs/pytorchEnv/lib/python3.8/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/homec/xiaolei/anaconda3/envs/pytorchEnv/lib/python3.8/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/homec/xiaolei/anaconda3/envs/pytorchEnv/lib/python3.8/runpy.py", line 265, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/homec/xiaolei/anaconda3/envs/pytorchEnv/lib/python3.8/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/homec/xiaolei/anaconda3/envs/pytorchEnv/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/homec/xiaolei/projects/ReID/train.py", line 201, in <module>
+    for person_image_bs in train_data_loader:
+  File "/homec/xiaolei/anaconda3/envs/pytorchEnv/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 444, in __iter__
+    return self._get_iterator()
+  File "/homec/xiaolei/anaconda3/envs/pytorchEnv/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 390, in _get_iterator
+    return _MultiProcessingDataLoaderIter(self)
+  File "/homec/xiaolei/anaconda3/envs/pytorchEnv/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1077, in __init__
+    w.start()
+  File "/homec/xiaolei/anaconda3/envs/pytorchEnv/lib/python3.8/multiprocessing/process.py", line 121, in start
+    self._popen = self._Popen(self)
+  File "/homec/xiaolei/anaconda3/envs/pytorchEnv/lib/python3.8/multiprocessing/context.py", line 224, in _Popen
+    return _default_context.get_context().Process._Popen(process_obj)
+  File "/homec/xiaolei/anaconda3/envs/pytorchEnv/lib/python3.8/multiprocessing/context.py", line 284, in _Popen
+    return Popen(process_obj)
+  File "/homec/xiaolei/anaconda3/envs/pytorchEnv/lib/python3.8/multiprocessing/popen_spawn_posix.py", line 32, in __init__
+    super().__init__(process_obj)
+  File "/homec/xiaolei/anaconda3/envs/pytorchEnv/lib/python3.8/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/homec/xiaolei/anaconda3/envs/pytorchEnv/lib/python3.8/multiprocessing/popen_spawn_posix.py", line 42, in _launch
+    prep_data = spawn.get_preparation_data(process_obj._name)
+  File "/homec/xiaolei/anaconda3/envs/pytorchEnv/lib/python3.8/multiprocessing/spawn.py", line 154, in get_preparation_data
+    _check_not_importing_main()
+  File "/homec/xiaolei/anaconda3/envs/pytorchEnv/lib/python3.8/multiprocessing/spawn.py", line 134, in _check_not_importing_main
+    raise RuntimeError('''
+RuntimeError: 
+        An attempt has been made to start a new process before the
+        current process has finished its bootstrapping phase.
+
+        This probably means that you are not using fork to start your
+        child processes and you have forgotten to use the proper idiom
+        in the main module:
+
+            if __name__ == '__main__':
+                freeze_support()
+                ...
+
+        The "freeze_support()" line can be omitted if the program
+        is not going to be frozen to produce an executable.
+/homec/xiaolei/anaconda3/envs/pytorchEnv/lib/python3.8/multiprocessing/resource_tracker.py:216: UserWarning: resource_tracker: There appear to be 12 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
